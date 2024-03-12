@@ -1,0 +1,17 @@
+<h4>Ajouter un nouvel article</h4>
+<form
+  method="post"
+  #emailForm="ngForm"
+  (ngSubmit)="onSubmitForm(emailForm)"
+  class="formulaire"
+>
+  <label for="text">Titre</label><br />
+  <input type="text" id="input_text" /><br /><br />
+  <label for="prix">Prix</label><br />
+  <input type="text" id="input_prix" /><br /><br />
+
+  <button type="submit" class="bouton">Envoyer</button>
+</form>
+<br /><br />
+<a routerLink="/articles"> Retour</a>
+<app-footer></app-footer>

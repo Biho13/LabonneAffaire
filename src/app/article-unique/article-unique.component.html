@@ -1,0 +1,28 @@
+<div class="article-card" [ngClass]="{ art: buttonText === 'Je n\'aime plus' }">
+  <img [src]="article_.imageUrl" [alt]="article_.title" />
+  <h6 [ngStyle]="{ color: getColor() }">
+    {{ article_.title | uppercase }}
+    <span class="title_" *ngIf="dispo === true"> indisponible</span>
+  </h6>
+
+  <p>
+    <strong>{{ article_.prix }} $</strong>
+  </p>
+  <p>{{ article_.description }}</p>
+  <p><button class="_article" routerLink="/form">Ajouter un article</button></p>
+  <p>
+    <button (click)="onNLike()">{{ buttonText }}</button>
+  </p>
+  <div class="bas">
+    <p>Nombre de likes : {{ article_.n_like }}</p>
+    <p>
+      Date de dernière mise à jour :
+      <strong> {{ article_.createdDate | date : "medium" }} </strong>
+    </p>
+
+    <input type="comment" id="input_text" [(ngModel)]="Comment" /><br />
+    <p><strong>Commentaire:</strong> {{ Comment }}</p>
+    <a routerLink="/articles"> Retour</a>
+  </div>
+</div>
+<app-footer></app-footer>

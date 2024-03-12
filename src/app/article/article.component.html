@@ -1,0 +1,14 @@
+<div
+  class="article-card g-col-4"
+  [ngClass]="{ art: buttonText === 'Je n\'aime plus' }"
+>
+  <h5>
+    <span class="title_"> {{ article_.title | uppercase }} </span>
+  </h5>
+
+  <p>{{ article_.description }}</p>
+
+  <p>
+    <button (click)="onViewArticle_()" class="_article">Voir l'article</button>
+  </p>
+</div>
